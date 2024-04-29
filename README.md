@@ -1,1 +1,1 @@
-# capacitor-context-menu
+# capacitor-context-menu-disable
