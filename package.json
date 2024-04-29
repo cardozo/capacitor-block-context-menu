@@ -13,7 +13,12 @@
     "ios/Plugin/",
     "CapacitorBlockContextMenu.podspec"
   ],
-  "author": "Matheus Tusi",
+  "author": "Cardozo",
+  "contributors": [
+    {
+      "name": "Matheus Tusi"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
