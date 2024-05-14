@@ -3,20 +3,17 @@ package com.santos.matheus.blockcontextmenu;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
-import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import com.getcapacitor.PluginMethod;
 
 @CapacitorPlugin(name = "BlockContextMenu")
 public class BlockContextMenuPlugin extends Plugin {
 
     private BlockContextMenu implementation = new BlockContextMenu();
 
-    @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+    @Override
+    public void load() {
+        implementation.blockContextMenu(getBridge().getWebView());  // Pass the WebView from Capacitor to the blocker.
     }
+
 }
