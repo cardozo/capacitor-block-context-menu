@@ -1,17 +1,16 @@
 package com.santos.matheus.blockcontextmenu;
 
-import android.util.Log;
 import android.webkit.WebView;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.webkit.WebViewClient;
 
 public class BlockContextMenu {
+    public void setupWebView(WebView webView) {
+        webView.setWebViewClient(new WebViewClient() {
+            // Manter o comportamento padrão, que permite seleção de texto
+        });
 
-    public void blockContextMenu(WebView webView) {
-        webView.setOnLongClickListener(view -> true);  // Ignore long press to block context menu.
-        Log.i("BlockContextMenu", "Context menu is blocked.");
+        webView.setOnCreateContextMenuListener((menu, v, menuInfo) -> {
+            // Bloquear o menu de contexto, não faça nada aqui
+        });
     }
-
 }
